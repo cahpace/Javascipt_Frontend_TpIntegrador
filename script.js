@@ -3,8 +3,8 @@ function validarCantidad(){
     let cantidad = document.getElementById('cantidad');
     
     let precio = 0;
-    if(cantidad.value < 0){
-        document.getElementById('alerta').innerText ="escolha quantidade maior que 0";
+    if(cantidad.value <= 0){
+        document.getElementById('alerta').innerText ="Elija una cantidad mayor 0";
         console.log("invalido");  
     } else {
        let precio = cantidad.value * 200;
