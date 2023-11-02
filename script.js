@@ -12,22 +12,40 @@ function validarCantidad(){
        return precio;
     }
     }
+    let select = document.getElementById('categoria')
+    select.addEventListener('change', function(){
+        console.log(select.value)
+    })
+
+    //fazer um event listener para juntar função da quantidade e da categoria quando muda uma das duas
+                
+  /*  const select = document.getElementById('categoria');
+        select.addEventListener('change', function() {
+        console.log(this.option.value)
+}) */
+/*function categoriaT(){
+    const select = document.getElementById('categoria');
+    console.log(this.option.value)
+}*/
+
 //fazer uma validação para quantidade ainda nao foi preenchida
 function categoriaT(){
-    let categoriaTicket = document.getElementsByTagName("option").value;
-    if (categoriaTicket === "estudiante"){
-            precio = cantidad.value * 200* 0.8;
+    let categoriaTicket = document.getElementById('categoria');
+    let cantidad = document.getElementById('cantidad');
+    if (categoriaTicket.value === "estudiante"){
+            precio = cantidad.value * 200* 0.2;
             console.log(precio);
             return document.getElementById('alerta').innerText = precio;
         }
-    else if (categoriaTicket === "trainee"){
-        precio = cantidad * 200 * 0.5;
+    else if (categoriaTicket.value === "trainee"){
+        precio = cantidad.value * 200 * 0.5;
         return document.getElementById('alerta').innerText = precio;
-   }else if (categoriaTicket == "junior"){
-        precio = cantidad * 200 * 0.15;
+   }else if (categoriaTicket.value == "junior"){
+        precio = cantidad.value * 200 * 0.85;
        return  document.getElementById('alerta').innerText = precio;
     }
 }
+
 
 
     //console.log(cantidad.value);
@@ -47,5 +65,20 @@ if (cantidad <= 0){
 }
 }*/
 
-//funçao que faz borrar dados colocados
 //função resumen
+function resume(){
+    //console.log('clicou');
+    let cantidad = document.getElementById('cantidad');
+    //console.log(cantidad.value);
+    document.getElementById('resume-cantidad').innerText = cantidad.value;
+    let select = document.getElementById('categoria')
+    document.getElementById('resume-categoria').innerText = select.value;
+    let precioTotal = document.getElementById('alerta');
+    let precioTotalResume = document.getElementById('precio-total');
+    console.log(precioTotal);
+    precioTotalResume.innerText = precioTotal;
+    
+}
+function borrarInfo(){
+    document.getElementById('alerta').innerText = "0";
+}

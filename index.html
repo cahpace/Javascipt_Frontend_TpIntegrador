@@ -84,23 +84,30 @@
             
             <div class="d-flex flex-column col-md">
               <label for="categoria" class="form-label">Categoria</label>
-              <select class="form-select mb-4" aria-label="Default select example" id="categoria" onclick="CategoriaT()" >
+              <select class="form-select mb-4" aria-label="Default select example" id="categoria" onclick="categoriaT()">
+                <option value="" selected>Categoria...</option>
                 <option value="estudiante">Estudiante</option>
                 <option value="trainee">Trainee</option>
                 <option value="junior">Junior</option>
               </select>
             </div>
-            
+           
           </div>
                     
-          <div class="mb-4 bg-info mb-3 text-primary-subtle p-2 ps-4 rounded-1 text-primary-emphasis" style="--bs-bg-opacity: .3" >Total a pagar: $ <span class="fw-bold" id="alerta"></span></div>
+          <div class="mb-4 bg-info mb-3 text-primary-subtle p-2 ps-4 rounded-1 text-primary-emphasis border border-primary-subtle" style="--bs-bg-opacity: .2" >Total a pagar: $ <span class="fw-bold" id="alerta"></span></div>
           <div class="d-grid gap-2 align-center d-flex flex-column flex-md-row">
-            <button type="reset" class="enviar btn text-white mb-2 mb-md-2 col-md-6 fw-bold m-2 m-md-0" id="borrar" placeholder="Borrar">Borrar</button>
-            <button class="enviar btn text-white mb-2 mb-md-2 col-md-6 fw-bold m-2 m-md-0" id="resumen">Resumen</button>  
+            <button type="reset" class="enviar btn text-white mb-2 mb-md-2 col-md-6 fw-bold m-2 m-md-0" id="borrar" placeholder="Borrar" onclick="borrarInfo()">Borrar</button>
+            <button type="button" class="enviar btn text-white mb-2 mb-md-2 col-md-6 fw-bold m-2 m-md-0" id="resumen" onclick="resume()">Resumen</button>  
           </div>
-          
+          <div class="mb-4 bg-info mb-3 text-primary-subtle p-2 ps-4 rounded-1 text-primary-emphasis border border-primary-subtle resume-div d-none" style="--bs-bg-opacity: .2" >
+              <h3>Resumen de la compra:</h3>
+              <p>Catoria ticket: <span id="resume-categoria" class="fw-bold"></span></p>
+              <p>Cantidad: <span id="resume-cantidad" class="fw-bold"></span></p>
+              <p>Precio total: <span id="precio-total" class="fw-bold"></span></p>
+          </div>
         </div>
       </form>
+      
     </section>
     
 
