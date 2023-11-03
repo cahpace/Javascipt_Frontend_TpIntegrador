@@ -49,7 +49,9 @@ button#borrar:hover, button#resumen:hover{
    background-color: greenyellow !important;
     /*border: 1px solid green !important;*/
 }
-
+#div_resume{
+    display: none;
+}
 /*----------Footer------------*/
 footer{
     background-image: linear-gradient(to right, var(--color-dark-blue), var(--color-light-blue));
